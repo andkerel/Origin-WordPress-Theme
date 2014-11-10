@@ -1,0 +1,190 @@
+//----------------------------------------------------------------
+//	Font Size
+//----------------------------------------------------------------
+@mixin fontSize($value) {
+
+    @if $pxSupport == "true" {
+    	font-size: ($value) + px;
+		font-size: ($value / 10) + rem;
+    }
+
+    @else {
+		font-size: ($value / 10) + rem;
+    }
+}
+
+
+//----------------------------------------------------------------
+//	Font Family
+//----------------------------------------------------------------
+//  NOTE: May need to be edited, depending on what formats are 
+//  provided by the foundry that you are using.
+@mixin font($fontName, $fontLongname) {
+
+	@font-face {
+		font-family: $fontName;
+		src: url("/_/css/fonts/" + $fontLongname + "/" + $fontLongname + ".eot");
+		src: url("/_/css/fonts/" + $fontLongname + "/" + $fontLongname + ".eot?#iefix") format("embedded-opentype"),
+			 url("/_/css/fonts/" + $fontLongname + "/" + $fontLongname + ".woff") format("woff"),
+			 url("/_/css/fonts/" + $fontLongname + "/" + $fontLongname + ".ttf") format("truetype"),
+			 url("/_/css/fonts/" + $fontLongname + "/" + $fontLongname + ".svg#" + $fontName + "") format("svg");
+	}	
+}
+
+
+//----------------------------------------------------------------
+//	Border Radius
+//----------------------------------------------------------------
+// NOTE: only use for defined widths, not percentages.
+@mixin radius($values...) {
+
+	$max: length($values);
+	$pxValues: '';
+	$remValues: '';
+
+	@for $i from 1 through $max {
+		$value: prop-count(nth($values, $i));
+		$pxValues: #{$pxValues + $value}px;
+
+		@if $i < $max {
+			$pxValues: #{$pxValues + " "};
+		}
+	} 
+
+	@for $i from 1 through $max {
+		$value: prop-count(nth($values, $i));
+		$remValues: #{$remValues + $value/10}rem;
+
+		@if $i < $max {
+			$remValues: #{$remValues + " "};
+		}
+	}
+
+	@if $pxSupport == "true" {
+    	-webkit-border-radius: $pxValues;
+	   	   -moz-border-radius: $pxValues;
+				border-radius: $pxValues;
+		-webkit-border-radius: $remValues;
+	   	   -moz-border-radius: $remValues;
+				border-radius: $remValues;
+    }
+
+    @else {
+		-webkit-border-radius: $remValues;
+	   	   -moz-border-radius: $remValues;
+				border-radius: $remValues;
+    }
+}
+
+
+//----------------------------------------------------------------
+//	Property & Values
+//----------------------------------------------------------------
+@function prop-count($num) {
+	@return $num / ($num * 0 + 1);
+}
+
+@mixin prop($styleProperty, $values...) {
+	$max: length($values);
+	$pxValues: '';
+	$remValues: '';
+
+	@for $i from 1 through $max {
+		$value: prop-count(nth($values, $i));
+		$pxValues: #{$pxValues + $value}px;
+
+		@if $i < $max {
+			$pxValues: #{$pxValues + " "};
+		}
+	} 
+
+	@for $i from 1 through $max {
+		$value: prop-count(nth($values, $i));
+		$remValues: #{$remValues + $value/10}rem;
+
+		@if $i < $max {
+			$remValues: #{$remValues + " "};
+		}
+	}
+
+	@if $pxSupport == "true" {
+    	#{$styleProperty}: $pxValues; 
+		#{$styleProperty}: $remValues; 
+    }
+
+    @else {
+		#{$styleProperty}: $remValues; 
+    }
+}
+
+
+//----------------------------------------------------------------
+//	Transition
+//----------------------------------------------------------------
+@mixin trans($effect...) {
+	-webkit-transition: $effect;
+   	   -moz-transition: $effect;
+			transition: $effect;
+}
+
+
+//----------------------------------------------------------------
+//	Image with high res version (WORK IN PROGRESS)
+//----------------------------------------------------------------
+// @mixin backgroundImage($fileName, $ext, $vars, $highRes:"false") {
+
+// 	@if $highRes == "true" {
+//     	background: url(/_/images/#{$fileName}.#{$ext}) $vars;
+		
+
+// 			  /* Retina-specific stuff here */
+
+
+// 	}
+
+//     @else {
+// 		background: url(/_/images/#{$fileName}.#{$ext}) $vars;
+//     }
+// }
+
+
+//----------------------------------------------------------------
+//	Border
+//----------------------------------------------------------------
+@mixin border($width, $style, $color, $side:"false") {
+
+	@if $pxSupport == "true" {
+    	
+    	@if $side == "false" {
+			border: ($width)+px $style $color;
+			border: ($width / 10)+rem $style $color;
+		}
+
+		@else {
+			border#{-$side}: ($width)+px $style $color;
+			border#{-$side}: ($width / 10)+rem $style $color;
+		}
+    }
+
+    @else {
+		
+		@if $side == "false" {
+			border: ($width / 10)+rem $style $color;
+		}
+
+		@else {
+			border#{-$side}: ($width / 10)+rem $style $color;
+		}
+    }
+}
+
+
+//----------------------------------------------------------------
+//	Browser Pre-Fix
+//----------------------------------------------------------------
+@mixin pre($attr, $value) {
+	-webkit-#{$attr}: $value;
+   	   -moz-#{$attr}: $value;
+   	    -ms-#{$attr}: $value;
+			#{$attr}: $value;
+}
