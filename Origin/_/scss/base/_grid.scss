@@ -91,6 +91,7 @@
 @mixin gridSize($sizeName, $kickIn) {
 
     @media only screen and (min-width: ($kickIn + px)) {
+<<<<<<< HEAD:Origin/_/scss/base/_grid.scss
 
         .#{$sizeName}-hidden {
             display: none;
@@ -107,6 +108,8 @@
         .#{$sizeName}-inline-block {
             display: inline-block;
         }
+=======
+>>>>>>> origin/master:Origin/_/scss/base/_grid.scss
 
         .#{$sizeName}-text-center {
             text-align: center;
@@ -174,6 +177,7 @@
 //  Grid Sizes
 //----------------------------------------------------------------
 @media only screen {
+<<<<<<< HEAD:Origin/_/scss/base/_grid.scss
 
     .xsmall-hidden {
         display: none;
@@ -191,6 +195,8 @@
         display: inline-block;
     }
 
+=======
+>>>>>>> origin/master:Origin/_/scss/base/_grid.scss
     .xsmall-text-center {
         text-align: center;
     }
