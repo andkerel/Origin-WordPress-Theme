@@ -26,6 +26,11 @@
     max-width: ($rowWidth / 10) + rem;
     *zoom: 1;
 
+    &.half-row {
+        max-width: ($rowWidth / 2) + px;
+        max-width: ($rowWidth / 20) + rem;
+    }
+
     .row {
         width: auto;
         margin: 0 (-($columnGutter/2) + px);
@@ -85,7 +90,23 @@
 
 @mixin gridSize($sizeName, $kickIn) {
 
-    @media only screen and (min-width: (($kickIn + 1) + px)) {
+    @media only screen and (min-width: ($kickIn + px)) {
+
+        .#{$sizeName}-hidden {
+            display: none;
+        }
+
+        .#{$sizeName}-block {
+            display: block;
+        }
+
+        .#{$sizeName}-inline {
+            display: inline;
+        }
+
+        .#{$sizeName}-inline-block {
+            display: inline-block;
+        }
 
         .#{$sizeName}-text-center {
             text-align: center;
@@ -148,19 +169,37 @@
     }
 }
 
+
 //----------------------------------------------------------------
 //  Grid Sizes
 //----------------------------------------------------------------
 @media only screen {
-    .small-text-center {
+
+    .xsmall-hidden {
+        display: none;
+    }
+
+    .xsmall-block {
+        display: block;
+    }
+
+    .xsmall-inline {
+        display: inline;
+    }
+
+    .xsmall-inline-block {
+        display: inline-block;
+    }
+
+    .xsmall-text-center {
         text-align: center;
     }
 
-    .small-text-left {
+    .xsmall-text-left {
         text-align: left;
     }
 
-    .small-text-right {
+    .xsmall-text-right {
         text-align: right;
     }
 
@@ -168,13 +207,13 @@
     .column,
     .columns {
         
-        &.small-centered {
+        &.xsmall-centered {
             margin-left: auto;
             margin-right: auto;
             float: none; 
         }
 
-        &.small-uncentered {
+        &.xsmall-uncentered {
             margin-left: 0;
             margin-right: 0;
             float: left;
@@ -186,30 +225,31 @@
     }
 
     @for $i from 1 through $totalColumns {
-        .small#{-$i} { @include grid-column($columns:$i); }
+        .xsmall#{-$i} { @include grid-column($columns:$i); }
     }
 
     @for $i from 1 through $totalColumns {
-        .small-push#{-$i} { @include grid-column($push:$i); }
+        .xsmall-push#{-$i} { @include grid-column($push:$i); }
     }
 
     @for $i from 1 through $totalColumns {
-        .small-pull#{-$i} { @include grid-column($pull:$i); }
+        .xsmall-pull#{-$i} { @include grid-column($pull:$i); }
     }
 
     @for $i from 1 through $totalColumns {
-        .small-block-grid#{-$i} > li {
+        .xsmall-block-grid#{-$i} > li {
             width: (#{100/$i})+("%");
         }
-        .small-block-grid#{-$i} > li:nth-of-type(n) {
+        .xsmall-block-grid#{-$i} > li:nth-of-type(n) {
             clear: none;   
         }
-        .small-block-grid#{-$i} > li:nth-of-type(#{$i}n+1) {
+        .xsmall-block-grid#{-$i} > li:nth-of-type(#{$i}n+1) {
             clear: both; 
         }
     }
 }
 
 // Additional grid sizes can be added here.
+@include gridSize("small", $smallScreen);
 @include gridSize("medium", $mediumScreen);
 @include gridSize("large", $largeScreen);
