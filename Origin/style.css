@@ -48,7 +48,7 @@ svg:not(:root) { overflow: hidden; }
 
 code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1.4rem; }
 
-h1, h2, h3, h4, h5, h6, .alpha, .beta, .gamma, .delta, .epsilon, .zeta { color: #333; }
+h1, h2, h3, h4, h5, h6, .alpha, .beta, .gamma, .delta, .epsilon, .zeta { color: #333; font-weight: normal; }
 
 p, li { color: #777; }
 
@@ -402,6 +402,10 @@ p, li { color: #777; }
 
 .has-shadow { box-shadow: 0 2px 3px #ccc; box-shadow: 0 0.2rem 0.3rem #ccc; }
 
+.box-shadow { -webkit-box-shadow: 0px 2px 3px rgba(138, 133, 127, 0.3); -moz-box-shadow: 0px 2px 3px rgba(138, 133, 127, 0.3); box-shadow: 0px 2px 3px rgba(138, 133, 127, 0.3); }
+
+.aa { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
 a { outline: none; }
 
 iframe, object, embed { max-width: 100%; }
@@ -422,6 +426,10 @@ iframe, object, embed { max-width: 100%; }
 .v-wrapper .v-inner { display: table-cell; height: 100%; vertical-align: middle; }
 
 .has-radius { -webkit-border-radius: 0.3rem; -moz-border-radius: 0.3rem; border-radius: 0.3rem; }
+
+.noWrap { white-space: nowrap; }
+
+.hidden { display: none; }
 
 .bg-white { background: #fff; }
 
@@ -445,8 +453,6 @@ iframe, object, embed { max-width: 100%; }
 [class*="border-white"] { border-color: #fff; }
 
 ::-webkit-input-placeholder { opacity: 1; }
-
-:-moz-placeholder { opacity: 1; }
 
 ::-moz-placeholder { opacity: 1; }
 
