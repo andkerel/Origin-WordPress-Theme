@@ -1,15 +1,4 @@
-<?php
-/**
- * The template for displaying Author Archive pages
- *
- * Please see /_/includes/utilities.php for info on Origin_Utilities::get_template_parts()
- *
- * @package 	WordPress
- * @subpackage 	Origin
- * @since 		Origin 1.0
- */
-?>
-<?php Origin_Utilities::get_template_parts( array( '_/includes/html-header', '_/includes/header' ) ); ?>
+<?php Origin::get_includes( array( "_/includes/html-header", "_/includes/header" ) ); ?>
 
 <?php if ( have_posts() ): the_post(); ?>
 
@@ -37,4 +26,4 @@
 <h2>No posts to display for <?php echo get_the_author() ; ?></h2>	
 <?php endif; ?>
 
-<?php Origin_Utilities::get_template_parts( array( '_/includes/footer','_/includes/html-footer' ) ); ?>
+<?php Origin::get_includes( array( '_/includes/footer','_/includes/html-footer' ) ); ?>

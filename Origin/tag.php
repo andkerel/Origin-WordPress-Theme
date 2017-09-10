@@ -1,15 +1,4 @@
-<?php
-/**
- * The template used to display Tag Archive pages
- *
- * Please see /_/includes/utilities.php for info on Origin_Utilities::get_template_parts()
- *
- * @package 	WordPress
- * @subpackage 	Origin
- * @since 		Origin 1.0
- */
-?>
-<?php Origin_Utilities::get_template_parts( array( '_/includes/html-header', '_/includes/header' ) ); ?>
+<?php Origin::get_includes( array( "_/includes/html-header", "_/includes/header" ) ); ?>
 
 <?php if ( have_posts() ): ?>
 <h2>Tag Archive: <?php echo single_tag_title( '', false ); ?></h2>
@@ -28,4 +17,4 @@
 <h2>No posts to display in <?php echo single_tag_title( '', false ); ?></h2>
 <?php endif; ?>
 
-<?php Origin_Utilities::get_template_parts( array( '_/includes/footer','_/includes/html-footer' ) ); ?>
+<?php Origin::get_includes( array( '_/includes/footer','_/includes/html-footer' ) ); ?>

@@ -1,20 +1,4 @@
-<?php
-/**
- * The template for displaying Archive pages.
- *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * Please see /_/includes/utilities.php for info on Origin_Utilities::get_template_parts() 
- *
- * @package 	WordPress
- * @subpackage 	Origin
- * @since 		Origin 1.0
- */
-?>
-<?php Origin_Utilities::get_template_parts( array( '_/includes/html-header', '_/includes/header' ) ); ?>
+<?php Origin::get_includes( array( "_/includes/html-header", "_/includes/header" ) ); ?>
 
 <?php if ( have_posts() ): ?>
 
@@ -43,4 +27,4 @@
 <h2>No posts to display</h2>	
 <?php endif; ?>
 
-<?php Origin_Utilities::get_template_parts( array( '_/includes/footer','_/includes/html-footer' ) ); ?>
+<?php Origin::get_includes( array( '_/includes/footer','_/includes/html-footer' ) ); ?>
