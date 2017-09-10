@@ -1,18 +1,18 @@
-/*
-Theme Name: 	Origin
-Theme URI: 		https://github.com/davejfox/
-Version: 		1.0
-Author: 		Dave J. Fox
+/*----------------------------------------------------------------
+This was built with Origin, by Dave J. Fox.
+Origin is free to use, if you build something cool, show me!
 
-Built with Origin by Dave J. Fox
-Twitter: 	@davejfox
-Github: 	davejfox
+You can remove this credit if you want, but it'd be a lot cooler
+if you didn't.
 
-Free to use, if you make something cool show me! 
-*/
+Twitter:	https://twitter.com/davejfox/
+Github:		https://github.com/davejfox/
+----------------------------------------------------------------*/
 
-// BASE STYLES
-// ---------------------------------------------------------
+
+//----------------------------------------------------------------
+//  BASE STYLES
+//----------------------------------------------------------------
 @import "base/_variables.scss";
 @import "base/_mixins.scss";
 @import "base/_reset.scss";
@@ -20,20 +20,23 @@ Free to use, if you make something cool show me!
 @import "base/_grid.scss";
 @import "base/_common.scss";
 @import "base/_forms.scss";
-@import "base/_tables.scss";
+//@import "base/_tables.scss";
 
 
+//----------------------------------------------------------------
 // VENDOR 
-// ---------------------------------------------------------
+//----------------------------------------------------------------
 //@import "vendor/_third-party-stylesheets-go-here.scss";
 
 
+//----------------------------------------------------------------
 // MODULES
 // ---------------------------------------------------------
 @import "modules/_header.scss";
 @import "modules/_footer.scss";
 
 
+//----------------------------------------------------------------
 // REGIONS
 // ---------------------------------------------------------
-//@import "regions/_homepage.scss";
+//@import "regions/_home.scss";
