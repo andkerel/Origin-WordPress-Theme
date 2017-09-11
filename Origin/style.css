@@ -9,7 +9,6 @@ License: MIT
 Text Domain: Origin
 Tags: boilerplate, starter, grid
 ----------------------------------------------------------------*/
-@import url(../custom-css.css);
 *, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 html, body { height: 100%; }
@@ -445,5 +444,3 @@ iframe, object, embed { max-width: 100%; }
 :-ms-input-placeholder { opacity: 1; }
 
 [placeholder]:-ms-input-placeholder { opacity: 1; }
-
-/* theme custom css*/

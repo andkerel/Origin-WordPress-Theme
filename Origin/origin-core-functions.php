@@ -56,33 +56,10 @@ function my_deregister_scripts(){
 
 // CSS
 function origin_css_enqueuer() {
-	wp_register_style("screen", get_stylesheet_directory_uri()."/style.css", ", ", "" );
+	wp_register_style("screen", get_stylesheet_directory_uri()."/style.css");
 	wp_enqueue_style("screen");
 }
 
-// Editable theme styles - usable only with ACF Pro.
-include_once( ABSPATH . "wp-admin/includes/plugin.php" );
-
-if(is_plugin_active( "advanced-custom-fields-pro/acf.php")) {
-
-	if(function_exists("acf_add_options_page")) {
-		acf_add_options_page();
-	}
-
-	function generate_options_css() {
-		$ss_dir = get_stylesheet_directory();
-		ob_start();
-		require($ss_dir . "/custom-css.php");
-		$css = ob_get_clean();
-		file_put_contents($ss_dir . "/custom-css.css", $css, LOCK_EX);
-	}
-
-	add_action( "acf/save_post", "generate_options_css");
-
-	if(!is_admin()){
-		wp_enqueue_style( "custom-css", get_template_directory_uri() . "/custom-css.css" ); 
-	}
-}
 
 
 //----------------------------------------------------------------
@@ -110,4 +87,29 @@ add_filter("emoji_svg_url", "__return_false");
 add_filter("body_class", array("Origin", "add_slug_to_body_class")); // Adds body classes
 
 add_theme_support("post-thumbnails"); // Add theme support for post thumbnails.
+
+// Editable theme styles - usable only with ACF Pro.
+include_once( ABSPATH . "wp-admin/includes/plugin.php" );
+
+if(is_plugin_active( "advanced-custom-fields-pro/acf.php")) {
+
+	if(function_exists("acf_add_options_page")) {
+		acf_add_options_page();
+	}
+
+	function generate_options_css() {
+		$ss_dir = get_stylesheet_directory();
+		ob_start();
+		require($ss_dir . "/custom-css.php");
+		$css = ob_get_clean();
+		file_put_contents($ss_dir . "/custom-css.css", $css, LOCK_EX);
+	}
+
+	add_action( "acf/save_post", "generate_options_css");
+
+	if(!is_admin()){
+		wp_enqueue_style( "custom-css", get_template_directory_uri() . "/custom-css.css"); 
+	}
+}
+
 ?>
