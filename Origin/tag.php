@@ -1,5 +1,7 @@
 <?php Origin::get_includes( array( "_/includes/html-header", "_/includes/header" ) ); ?>
 
+<main>
+
 <?php if ( have_posts() ): ?>
 <h2>Tag Archive: <?php echo single_tag_title( '', false ); ?></h2>
 <ol>
@@ -16,5 +18,7 @@
 <?php else: ?>
 <h2>No posts to display in <?php echo single_tag_title( '', false ); ?></h2>
 <?php endif; ?>
+
+</main>
 
 <?php Origin::get_includes( array( '_/includes/footer','_/includes/html-footer' ) ); ?>
