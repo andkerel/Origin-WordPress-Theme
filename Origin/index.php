@@ -1,4 +1,10 @@
-<?php Origin::get_includes( array( "_/includes/html-header", "_/includes/header" ) ); ?>
+<?php Origin::get_includes( 
+	array(
+		"_/includes/html-header",
+		"_/includes/header"
+		)
+	);
+?>
 
 <main>
 	<?php if ( have_posts() ): ?>
