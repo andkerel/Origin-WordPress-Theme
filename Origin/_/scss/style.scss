@@ -1,13 +1,12 @@
 /*----------------------------------------------------------------
-Theme Name: Origin
+Theme Name: Origin 2
 Theme URI: https://github.com/davejfox/Origin-WordPress-Theme/
 Author: Dave J. Fox
 Author URI: http://davidfox.ie/
 Description: This was built using Origin, by Dave J. Fox. Origin is free to use, if you build something cool, show me! Feel free to pop me a message on Twitter just to let me know you're using it. Feedback and suggestions are always welcome. If you like this, follow me on GitHub for more cool stuff. You can remove this credit if you want, but it'd be a lot cooler if you didn't.
 Version: 2
 License: MIT
-Text Domain: Origin
-Tags: boilerplate, starter, grid
+Tags: boilerplate, starter, grid, responsive
 ----------------------------------------------------------------*/
 
 
@@ -40,4 +39,4 @@ Tags: boilerplate, starter, grid
 //----------------------------------------------------------------
 // REGIONS
 // ---------------------------------------------------------
-//@import "regions/_home.scss";
+@import "regions/_home.scss";

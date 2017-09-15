@@ -26,11 +26,11 @@
 
 	@font-face {
 		font-family: $fontName;
-		src: url("../fonts/" + $fontFileName + "/" + $fontFileName + ".eot");
-		src: url("../fonts/" + $fontFileName + "/" + $fontFileName + ".eot?#iefix") format("embedded-opentype"),
-			 url("../fonts/" + $fontFileName + "/" + $fontFileName + ".woff") format("woff"),
-			 url("../fonts/" + $fontFileName + "/" + $fontFileName + ".ttf") format("truetype"),
-			 url("../fonts/" + $fontFileName + "/" + $fontFileName + ".svg#" + $fontName + "") format("svg");
+		src: url("_/fonts/" + $fontFileName + "/" + $fontFileName + ".eot");
+		src: url("_/fonts/" + $fontFileName + "/" + $fontFileName + ".eot?#iefix") format("embedded-opentype"),
+			 url("_/fonts/" + $fontFileName + "/" + $fontFileName + ".woff") format("woff"),
+			 url("_/fonts/" + $fontFileName + "/" + $fontFileName + ".ttf") format("truetype"),
+			 url("_/fonts/" + $fontFileName + "/" + $fontFileName + ".svg#" + $fontName + "") format("svg");
 	}
 }
 

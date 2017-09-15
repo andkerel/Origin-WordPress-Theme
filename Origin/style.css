@@ -1,13 +1,12 @@
 /*----------------------------------------------------------------
-Theme Name: Origin
+Theme Name: Origin 2
 Theme URI: https://github.com/davejfox/Origin-WordPress-Theme/
 Author: Dave J. Fox
 Author URI: http://davidfox.ie/
 Description: This was built using Origin, by Dave J. Fox. Origin is free to use, if you build something cool, show me! Feel free to pop me a message on Twitter just to let me know you're using it. Feedback and suggestions are always welcome. If you like this, follow me on GitHub for more cool stuff. You can remove this credit if you want, but it'd be a lot cooler if you didn't.
 Version: 2
 License: MIT
-Text Domain: Origin
-Tags: boilerplate, starter, grid
+Tags: boilerplate, starter, grid, responsive
 ----------------------------------------------------------------*/
 *, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
@@ -59,9 +58,7 @@ p, li { color: #777; }
 .col:last-child, .column:last-child, .columns:last-child { float: right; }
 
 [class*="block-grid-"] { display: block; padding: 0; margin: 0 -25px; margin: 0 -2.5rem; }
-
 [class*="block-grid-"]:before, [class*="block-grid-"]:after { content: " "; display: table; }
-
 [class*="block-grid-"]:after { clear: both; }
 
 [class*="block-grid-"] > li { display: block; height: auto; float: left; list-style: none; margin: 0; padding: 0 25px; padding: 0 2.5rem; }
@@ -76,9 +73,9 @@ p, li { color: #777; }
   .xsmall-seamless { padding-left: 0; padding-right: 0; }
   .xsmall-has-padding { padding: 0 25px; padding: 0 2.5rem; }
   .xsmall-push-pull-unset { left: unset; right: unset; }
-  .col.xsmall-centered, .column.xsmall-centered, .columns.xsmall-centered { margin-left: auto; margin-right: auto; float: none; }
-  .col.xsmall-uncentered, .column.xsmall-uncentered, .columns.xsmall-uncentered { margin-left: 0; margin-right: 0; float: left; }
-  .col.xsmall-uncentered.opposite, .column.xsmall-uncentered.opposite, .columns.xsmall-uncentered.opposite { float: right; }
+  .xsmall-centered { margin-left: auto; margin-right: auto; float: none; }
+  .xsmall-uncentered { margin-left: 0; margin-right: 0; float: left; }
+  .xsmall-opposite { float: right; }
   .xsmall-1 { width: 8.3333333333%; }
   .xsmall-2 { width: 16.6666666667%; }
   .xsmall-3 { width: 25%; }
@@ -161,9 +158,9 @@ p, li { color: #777; }
   .small-seamless { padding-left: 0; padding-right: 0; }
   .small-has-padding { padding: 0 25px; padding: 0 2.5rem; }
   .small-push-pull-unset { left: unset; right: unset; }
-  .col.small-centered, .column.small-centered, .columns.small-centered { margin-left: auto; margin-right: auto; float: none; }
-  .col.small-uncentered, .column.small-uncentered, .columns.small-uncentered { margin-left: 0; margin-right: 0; float: left; }
-  .col.small-uncentered.opposite, .column.small-uncentered.opposite, .columns.small-uncentered.opposite { float: right; }
+  .small-centered { margin-left: auto; margin-right: auto; float: none; }
+  .small-uncentered { margin-left: 0; margin-right: 0; float: left; }
+  .small-opposite { float: right; }
   .small-1 { width: 8.3333333333%; }
   .small-2 { width: 16.6666666667%; }
   .small-3 { width: 25%; }
@@ -246,9 +243,9 @@ p, li { color: #777; }
   .medium-seamless { padding-left: 0; padding-right: 0; }
   .medium-has-padding { padding: 0 25px; padding: 0 2.5rem; }
   .medium-push-pull-unset { left: unset; right: unset; }
-  .col.medium-centered, .column.medium-centered, .columns.medium-centered { margin-left: auto; margin-right: auto; float: none; }
-  .col.medium-uncentered, .column.medium-uncentered, .columns.medium-uncentered { margin-left: 0; margin-right: 0; float: left; }
-  .col.medium-uncentered.opposite, .column.medium-uncentered.opposite, .columns.medium-uncentered.opposite { float: right; }
+  .medium-centered { margin-left: auto; margin-right: auto; float: none; }
+  .medium-uncentered { margin-left: 0; margin-right: 0; float: left; }
+  .medium-opposite { float: right; }
   .medium-1 { width: 8.3333333333%; }
   .medium-2 { width: 16.6666666667%; }
   .medium-3 { width: 25%; }
@@ -331,9 +328,9 @@ p, li { color: #777; }
   .large-seamless { padding-left: 0; padding-right: 0; }
   .large-has-padding { padding: 0 25px; padding: 0 2.5rem; }
   .large-push-pull-unset { left: unset; right: unset; }
-  .col.large-centered, .column.large-centered, .columns.large-centered { margin-left: auto; margin-right: auto; float: none; }
-  .col.large-uncentered, .column.large-uncentered, .columns.large-uncentered { margin-left: 0; margin-right: 0; float: left; }
-  .col.large-uncentered.opposite, .column.large-uncentered.opposite, .columns.large-uncentered.opposite { float: right; }
+  .large-centered { margin-left: auto; margin-right: auto; float: none; }
+  .large-uncentered { margin-left: 0; margin-right: 0; float: left; }
+  .large-opposite { float: right; }
   .large-1 { width: 8.3333333333%; }
   .large-2 { width: 16.6666666667%; }
   .large-3 { width: 25%; }
