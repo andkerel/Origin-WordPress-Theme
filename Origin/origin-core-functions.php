@@ -5,7 +5,7 @@
 class Origin {
 
 	// Includes function
-	public static function get_includes( $parts = array() ) {
+	public static function get_includes( $parts = array()) {
 		foreach( $parts as $part ) {
 			get_template_part( $part );
 		};
@@ -26,7 +26,7 @@ class Origin {
 	public static function add_slug_to_body_class( $classes ) {
 		global $post;
 
-		if( is_page() ) {
+		if( is_page()) {
 			$classes[] = sanitize_html_class( $post->post_name );
 		} elseif(is_singular()) {
 			$classes[] = sanitize_html_class( $post->post_name );
@@ -52,11 +52,10 @@ add_theme_support("post-thumbnails"); // Add theme support for post thumbnails.
 //----------------------------------------------------------------
 //  CSS / Styles
 //----------------------------------------------------------------
-function origin_css_enqueuer() {
-	wp_register_style("screen", get_stylesheet_directory_uri()."/style.css");
-	wp_enqueue_style("screen");
+function origin_css() {
+	wp_enqueue_style("main-stylesheet", get_stylesheet_directory_uri()."/style.css", array(), "", "all");
 }
-add_action("wp_enqueue_scripts", "origin_css_enqueuer");
+add_action("wp_print_styles", "origin_css", 1 );
 
 
 //----------------------------------------------------------------
@@ -121,7 +120,12 @@ function enable_acf_custom_styles($tf) {
 		add_action( "acf/save_post", "generate_custom_css");
 
 		if(!is_admin()){
-			wp_enqueue_style("custom-style", get_template_directory_uri() . "/custom-style.css"); 
+
+			function custom_style() {
+				wp_enqueue_style("custom-style", get_template_directory_uri() . "/custom-style.css", array(), "", "all");
+			}
+
+			add_action("wp_print_styles", "custom_style", 2);
 		}
 	}
 }

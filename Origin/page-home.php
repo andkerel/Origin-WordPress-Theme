@@ -1,4 +1,7 @@
 <?php
+//----------------------------------------------------------------
+// Template Name: Home
+//----------------------------------------------------------------
 Origin::get_includes( 
 	array(
 		"_/includes/html-header", 
@@ -7,14 +10,14 @@ Origin::get_includes(
 );
 ?>
 
-<?php if (have_posts()) while (have_posts()) : the_post(); ?>
+<?php if ( have_posts()) while ( have_posts()) : the_post(); ?>
 <main>
 	<h1><?php the_title(); ?></h1>
 	<?php the_content(); ?>
 </main>
 <?php endwhile; ?>
 
-<?php
+<?php 
 Origin::get_includes(
 	array(
 		"_/includes/footer",

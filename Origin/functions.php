@@ -21,7 +21,7 @@ remove_action("wp_head", "feed_links_extra", 3); // Removes all extra rss feed l
 
 
 //----------------------------------------------------------------
-//  Add your own custom functions below this line.
+//  Add your custom functions below this line.
 //----------------------------------------------------------------
 
 
