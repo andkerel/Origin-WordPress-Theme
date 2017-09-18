@@ -16,6 +16,15 @@
 
 
 //----------------------------------------------------------------
+//	Background Image Cover
+//----------------------------------------------------------------
+@mixin bgCover($filename) {
+	background: center center no-repeat url("_/images/" + $filename);
+	background-size: cover; 
+}
+
+
+//----------------------------------------------------------------
 //	Font Family
 //----------------------------------------------------------------
 //  NOTE: May need to be edited, depending on what formats are 
@@ -26,11 +35,11 @@
 
 	@font-face {
 		font-family: $fontName;
-		src: url("_/fonts/" + $fontFileName + "/" + $fontFileName + ".eot");
-		src: url("_/fonts/" + $fontFileName + "/" + $fontFileName + ".eot?#iefix") format("embedded-opentype"),
-			 url("_/fonts/" + $fontFileName + "/" + $fontFileName + ".woff") format("woff"),
-			 url("_/fonts/" + $fontFileName + "/" + $fontFileName + ".ttf") format("truetype"),
-			 url("_/fonts/" + $fontFileName + "/" + $fontFileName + ".svg#" + $fontName + "") format("svg");
+		src: url($fonts + $fontFileName + "/" + $fontFileName + ".eot");
+		src: url($fonts + $fontFileName + "/" + $fontFileName + ".eot?#iefix") format("embedded-opentype"),
+			 url($fonts + $fontFileName + "/" + $fontFileName + ".woff") format("woff"),
+			 url($fonts + $fontFileName + "/" + $fontFileName + ".ttf") format("truetype"),
+			 url($fonts + $fontFileName + "/" + $fontFileName + ".svg#" + $fontName + "") format("svg");
 	}
 }
 
